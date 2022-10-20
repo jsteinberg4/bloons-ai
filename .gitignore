@@ -4,6 +4,7 @@
 
 # Build files
 .gradle/
+build/
 
 # MacOS files
 .DS_Store
