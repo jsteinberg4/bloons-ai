@@ -1,6 +1,8 @@
 # This workflow is copied from the GitHub actions documentation.
 # See the original and guide here:
 # https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
+# Also borrows from:
+# https://github.com/marketplace/actions/gradle-build-action
 name: Java CI
 
 on:
@@ -25,12 +27,12 @@ jobs:
         with: # Use adopt openjdk 17
           java-version: '17'
           distribution: 'adopt'
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-        with:
-          arguments: build
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: BloonsAI
-          path: build/libs
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Execute Gradle build
+        run: ./gradlew build
+#      - name: Upload build artifacts
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: BloonsAI
+#          path: build/libs
