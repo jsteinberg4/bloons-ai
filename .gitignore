@@ -2,6 +2,11 @@
 .idea/
 *.iml
 
+# Build files
+.gradle/
+build/
+!/gradle/wrapper/gradle-wrapper.jar
+
 # MacOS files
 .DS_Store
 
@@ -10,12 +15,6 @@
 
 # Log file
 *.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
 # Package Files #
 *.jar
