@@ -1,5 +1,8 @@
 package org.jsds.model;
 
+/**
+ * A balloon will move down a designated path at a specified rate
+ */
 public class Balloon {
 
     // A balloons health when it first enters the game, it takes 2 hits to end a balloons path
@@ -9,7 +12,7 @@ public class Balloon {
     // A balloons ID which will allow the state to keep track of the health and position of specific balloons
     int id; // random number generator
 
-    // A balloons current position on a 2D Board, ALWAYS initially the start point
+    // A balloons current position on a 2D Board, ALWAYS initially the start point and can only be on the path
     Coordinate balloonPosition;
 
     public Balloon(Coordinate pos) {
@@ -44,5 +47,10 @@ public class Balloon {
     // Gets health of balloon
     public int getHealth() {
         return this.health;
+    }
+
+    // returns the unique ID of the balloon
+    public int getID() {
+        return this.id;
     }
 }
