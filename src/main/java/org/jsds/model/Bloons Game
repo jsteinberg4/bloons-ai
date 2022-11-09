@@ -1,0 +1,56 @@
+*****BLOONS TOWER DEFENSE SPEC*****
+
+To Do:
+
+
+
+
+
+Rules (Invariants):
+
+* Scoring
+  - Balloons score by getting across the entire valid path from bottom to top of the board
+  - Player scores by depleting a balloons health before it reaches the end of the valid path
+
+* For Balloons
+  - Balloons may only travel upon the designated valid path
+  - Getting across the entire valid path is calculated when its next move would make it move OFF of the board
+
+* For Players
+  - Placement of towers can be anywhere on the board EXCEPT the valid path
+  - Can not place a tower with an orientation such that no projectiles that originate from it will miss the entire
+    valid path
+
+
+
+
+General Logic (Contained In A Round):
+
+1. Before game completely starts, player chooses where to place first Tower
+
+2. Round Starts
+
+   (Visually)
+   3. Balloons will begin moving down the valid path at a specified rate
+
+   4. Projectiles will originate from placed Towers towards the closest Balloon at a specified rate
+
+   (Background)
+   5. There will be a check to see if a projectile has hit a balloon at a specified rate
+
+   6. There will be a check to see if a balloon made it across the valid path at a specified rate
+
+   7. There will be a check to see if the round has ended, which is when there are no balloons left
+
+   8. Calculate On Going Score
+
+7. Round Ends
+
+   (Visually)
+   8. Remove all remaining projectiles from the state
+
+   9. Place new tower at position specified by the Player
+
+
+
+
